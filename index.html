@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Juan Sebastian Vargas Molano — 3D Graphics &amp; Rendering Engineer</title>
+  <meta name="description" content="Senior 3D graphics &amp; rendering engineer and technical artist. 10+ years building real-time rendering systems, cross-platform avatar frameworks, and AI-driven 3D content pipelines." />
+  <meta name="author" content="Juan Sebastian Vargas Molano" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Juan Sebastian Vargas Molano — 3D Graphics &amp; Rendering Engineer" />
+  <meta property="og:description" content="Real-time rendering, avatar frameworks, and AI 3D pipelines. Built in WebGL." />
+  <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ===================== NAV ===================== -->
+  <header class="nav">
+    <a href="#hero" class="brand">JSVM<span class="dot">.</span></a>
+    <nav class="links">
+      <a href="#about">About</a>
+      <a href="#work">Work</a>
+      <a href="#experience">Experience</a>
+      <a href="#research">Research</a>
+      <a href="#contact" class="cta">Get in touch</a>
+    </nav>
+    <button class="menu-btn" aria-label="Toggle menu">☰</button>
+  </header>
+
+  <!-- ===================== HERO ===================== -->
+  <section id="hero">
+    <canvas id="hero-canvas" aria-hidden="true"></canvas>
+    <div class="hero-scrim" aria-hidden="true"></div>
+    <div class="wrap hero-inner">
+      <p class="eyebrow">Real-time graphics · Technical art · AI 3D</p>
+      <h1>Juan Sebastian<br />Vargas Molano</h1>
+      <p class="role">Senior <span class="grad-text">3D Graphics &amp; Rendering</span> Engineer <span style="color:var(--faint)">/</span> Technical Artist</p>
+      <p class="lede">
+        I build the systems that turn geometry, shaders, and AI into things you can
+        see and move in — real-time rendering engines, cross-platform avatar frameworks,
+        and 3D content pipelines shipped to users across entertainment, medical, and education.
+        <strong style="color:var(--muted)">This page is rendered live in WebGL — the same craft it describes.</strong>
+      </p>
+      <div class="hero-cta">
+        <a href="#work" class="btn btn-primary">See the work →</a>
+        <a href="#contact" class="btn btn-ghost">Get in touch</a>
+      </div>
+
+      <div class="stats">
+        <div class="stat"><div class="n" data-to="10" data-suffix="+">0</div><div class="l">years shipping real-time graphics</div></div>
+        <div class="stat"><div class="n" data-to="4" data-suffix="">0</div><div class="l">platforms: iOS, Android, desktop, WebGL</div></div>
+        <div class="stat"><div class="n" data-to="10" data-suffix="k+">0</div><div class="l">students taught across 60+ countries</div></div>
+        <div class="stat"><div class="n" data-to="2" data-suffix="">0</div><div class="l">first-author peer-reviewed papers</div></div>
+      </div>
+    </div>
+    <div class="scroll-hint"><span>scroll</span><span class="bar"></span></div>
+  </section>
+
+  <!-- ===================== ABOUT ===================== -->
+  <section id="about">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="kicker">Profile</p>
+        <h2>Engineer who speaks fluent GPU — and fluent artist.</h2>
+      </div>
+      <div class="about-grid">
+        <div class="reveal">
+          <p>
+            For 10+ years I've lived at the seam between <strong>rendering engineering</strong> and
+            <strong>technical art</strong>: writing the C++ and shader code that makes 3D fast and
+            correct, and understanding the meshes, rigs, and materials well enough to make it
+            beautiful. I've shipped commercial software adopted internationally, led cross-functional
+            engineering teams, and published peer-reviewed graphics research.
+          </p>
+          <p>
+            Today I focus on <strong>AI-driven 3D pipelines</strong> — turning raw generated meshes into
+            rigged, wearable-ready avatars at scale — and on the distributed infrastructure that makes
+            those pipelines run. I care about sub-micron accuracy and 90fps in equal measure.
+          </p>
+          <div class="skills-block">
+            <h4>Core languages</h4>
+            <div class="chips">
+              <span class="chip">C++</span><span class="chip">Python</span><span class="chip">JavaScript</span>
+              <span class="chip">C#</span><span class="chip">GLSL</span><span class="chip">HLSL</span>
+            </div>
+          </div>
+        </div>
+        <div class="reveal">
+          <div class="skills-block" style="margin-top:0">
+            <h4>Graphics &amp; rendering</h4>
+            <div class="chips">
+              <span class="chip">OpenGL</span><span class="chip">Vulkan</span><span class="chip">WebGL</span>
+              <span class="chip">Three.js</span><span class="chip">USD</span><span class="chip">PBR</span>
+              <span class="chip">Compute shaders</span><span class="chip">Scene graphs</span>
+            </div>
+          </div>
+          <div class="skills-block">
+            <h4>Character &amp; geometry</h4>
+            <div class="chips">
+              <span class="chip">Autorigging</span><span class="chip">Skinning</span><span class="chip">Blendshapes</span>
+              <span class="chip">Auto-retopology</span><span class="chip">Mesh segmentation</span><span class="chip">SLAM</span>
+            </div>
+          </div>
+          <div class="skills-block">
+            <h4>AI / infra</h4>
+            <div class="chips">
+              <span class="chip">Diffusion models</span><span class="chip">Pose estimation</span>
+              <span class="chip">CUDA</span><span class="chip">ROCm</span>
+              <span class="chip">Kubernetes / EKS</span><span class="chip">Kafka</span><span class="chip">AWS</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== WORK / PROJECT DEEP DIVES ===================== -->
+  <section id="work">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="kicker">Selected work</p>
+        <h2>Deep dives</h2>
+        <p>A few systems I've architected and led — the ones I'd want to talk about in an interview.</p>
+      </div>
+
+      <div class="projects">
+
+        <article class="project reveal">
+          <div class="p-top">
+            <span class="p-index">01</span>
+            <span class="p-tag">AI · Geometry Processing</span>
+          </div>
+          <h3>Meshmellow — AI auto-retopology</h3>
+          <p class="p-where">Genies · Lead Engineer</p>
+          <p class="p-body">
+            A proprietary, AI-powered <strong>quad-dominant auto-retopology system</strong> that turns
+            messy generated meshes into clean, animation-ready topology automatically. I led a team of
+            PhD- and Master's-level engineers and applied mathematicians to design the algorithms and
+            productionize them — replacing days of manual artist cleanup with a repeatable pipeline.
+          </p>
+          <div class="p-metrics">
+            <div class="m"><div class="mn">−70%</div><div class="ml">manual cleanup time</div></div>
+            <div class="m"><div class="mn">+95%</div><div class="ml">mesh uniformity</div></div>
+          </div>
+          <div class="p-stack">
+            <span class="chip">C++</span><span class="chip">Python</span><span class="chip">Mesh optimization</span>
+            <span class="chip">Applied math</span><span class="chip">Team lead</span>
+          </div>
+        </article>
+
+        <article class="project reveal">
+          <div class="p-top">
+            <span class="p-index">02</span>
+            <span class="p-tag">Runtime · Cross-platform</span>
+          </div>
+          <h3>Cross-platform C++ avatar runtime</h3>
+          <p class="p-where">Genies · R&amp;D Technical Artist</p>
+          <p class="p-body">
+            A high-performance C++ runtime for building, serializing, and rendering avatars across
+            <strong>iOS, Android, desktop, and WebGL</strong>. Modular core, container, and
+            asset-resolver libraries, FlatBuffers-based schemas, and native Unity and iOS wrappers —
+            one engine, every surface.
+          </p>
+          <div class="p-metrics">
+            <div class="m"><div class="mn">4</div><div class="ml">platforms from one core</div></div>
+            <div class="m"><div class="mn">USDZ / GLB</div><div class="ml">wearable-ready output</div></div>
+          </div>
+          <div class="p-stack">
+            <span class="chip">C++</span><span class="chip">FlatBuffers</span><span class="chip">USD</span>
+            <span class="chip">Unity</span><span class="chip">WebGL</span><span class="chip">iOS</span>
+          </div>
+        </article>
+
+        <article class="project reveal">
+          <div class="p-top">
+            <span class="p-index">03</span>
+            <span class="p-tag">Distributed · AIGC</span>
+          </div>
+          <h3>Distributed avatar-generation pipeline</h3>
+          <p class="p-where">Genies · Architect</p>
+          <p class="p-body">
+            Re-architected a monolithic autorigger into a distributed, individually schedulable pipeline
+            of <strong>Kafka workers on Kubernetes/EKS</strong> — coordinating CPU-bound Blender/USD
+            stages with GPU ML inference (body / hand / face pose estimation and segmentation) through a
+            shared S3 workflow. I also led the broader AIGC initiatives: procedural 3D generation with
+            diffusion models, texture synthesis, and the analytics platform that watches it all.
+          </p>
+          <div class="p-metrics">
+            <div class="m"><div class="mn">−40%</div><div class="ml">artist iteration time</div></div>
+            <div class="m"><div class="mn">95%</div><div class="ml">analytics endpoint coverage</div></div>
+          </div>
+          <div class="p-stack">
+            <span class="chip">Kubernetes / EKS</span><span class="chip">Kafka</span><span class="chip">AWS S3</span>
+            <span class="chip">Diffusion models</span><span class="chip">Blender (bpy)</span><span class="chip">Datadog</span>
+          </div>
+        </article>
+
+        <article class="project reveal">
+          <div class="p-top">
+            <span class="p-index">04</span>
+            <span class="p-tag">Rendering · Medical</span>
+          </div>
+          <h3>Sub-micron dental rendering kernel</h3>
+          <p class="p-where">E4D Technologies · 3D Graphics Engineer</p>
+          <p class="p-body">
+            Engineered geometric kernels for topological transformations and high-order curve
+            interpolation, hitting <strong>sub-micron accuracy in dental-margin modeling</strong>, plus a
+            custom PBR scene-graph architecture that lifted rendering throughput by an order of magnitude.
+            Shipped in E4D's commercial suite and integrated with Planmeca 3D imaging devices — adopted by
+            clinics, labs, and teaching institutions across North America and Europe.
+          </p>
+          <div class="p-metrics">
+            <div class="m"><div class="mn">10×</div><div class="ml">rendering throughput</div></div>
+            <div class="m"><div class="mn">&lt;1µm</div><div class="ml">margin-modeling accuracy</div></div>
+          </div>
+          <div class="p-stack">
+            <span class="chip">C++</span><span class="chip">OpenGL</span><span class="chip">PBR</span>
+            <span class="chip">Scene graph</span><span class="chip">Curve interpolation</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== EXPERIENCE ===================== -->
+  <section id="experience">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="kicker">Trajectory</p>
+        <h2>Experience</h2>
+        <p>From co-founding a studio in Bogotá to leading AI 3D R&amp;D in Los Angeles.</p>
+      </div>
+
+      <div class="timeline">
+        <div class="tl-item current reveal">
+          <span class="dot"></span>
+          <div class="tl-head">
+            <span class="tl-role">R&amp;D Technical Artist</span>
+            <span class="tl-co">· Genies Inc.</span>
+            <span class="tl-when">Oct 2024 – Present</span>
+          </div>
+          <p class="tl-loc">Los Angeles, CA</p>
+          <ul>
+            <li>Engineered the cross-platform C++ avatar runtime (iOS, Android, desktop, WebGL) and the modular avatar-assembly pipeline that finishes the company's AI avatar-generation system.</li>
+            <li>Led Meshmellow (AI auto-retopology) and the company's AIGC initiatives; architected the analytics &amp; observability platform for the generation pipelines.</li>
+            <li>Mentor engineering and graphics teams on shader development, USD, mesh optimization, and GPU compute.</li>
+          </ul>
+        </div>
+
+        <div class="tl-item reveal">
+          <span class="dot"></span>
+          <div class="tl-head">
+            <span class="tl-role">3D Graphics Engineer</span>
+            <span class="tl-co">· Cayster Inc.</span>
+            <span class="tl-when">Jun 2024 – Aug 2024</span>
+          </div>
+          <p class="tl-loc">New York, NY (Remote)</p>
+          <ul>
+            <li>Designed 2D/3D geometry algorithms across OpenGL, Vulkan, Three.js, and WebGL.</li>
+            <li>Built simulation, SLAM, and image-processing pipelines in C++, JS, and Python; optimized GPU workloads with CUDA and ROCm.</li>
+          </ul>
+        </div>
+
+        <div class="tl-item reveal">
+          <span class="dot"></span>
+          <div class="tl-head">
+            <span class="tl-role">3D Graphics Engineer</span>
+            <span class="tl-co">· E4D Technologies</span>
+            <span class="tl-when">Jun 2023 – Jun 2024</span>
+          </div>
+          <p class="tl-loc">Richardson, TX</p>
+          <ul>
+            <li>Built sub-micron geometric kernels and a custom PBR scene graph shipped in E4D's commercial suite.</li>
+            <li>Integrated with Planmeca 3D imaging devices for an ecosystem adopted by clinics and labs internationally.</li>
+          </ul>
+        </div>
+
+        <div class="tl-item reveal">
+          <span class="dot"></span>
+          <div class="tl-head">
+            <span class="tl-role">Lead Teaching Assistant</span>
+            <span class="tl-co">· University of Pennsylvania</span>
+            <span class="tl-when">Jan 2022 – May 2023</span>
+          </div>
+          <p class="tl-loc">Philadelphia, PA · CGGT program</p>
+          <ul>
+            <li>Delivered graduate lectures/labs on rigging, kinematics, PBR simulation, and GPU rendering; co-designed assignments on quaternion interpolation, FE skinning, and shaders.</li>
+            <li>Earned the Outstanding Teaching Award; mentored cohorts placed at Disney, Pixar, and Blizzard.</li>
+          </ul>
+        </div>
+
+        <div class="tl-item reveal">
+          <span class="dot"></span>
+          <div class="tl-head">
+            <span class="tl-role">Co-Founder &amp; Engineering Manager</span>
+            <span class="tl-co">· Vargas Ingeniería S.A.S.</span>
+            <span class="tl-when">Jan 2016 – Aug 2021</span>
+          </div>
+          <p class="tl-loc">Bogotá, Colombia</p>
+          <ul>
+            <li>Delivered immersive 3D, AR, and VR products for education, tourism, and entertainment clients across Latin America; led engineering delivery and grew the company's regional presence.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== RESEARCH / RECOGNITION ===================== -->
+  <section id="research">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="kicker">Research &amp; recognition</p>
+        <h2>Published, awarded, and teaching worldwide</h2>
+      </div>
+      <div class="grid-2">
+        <div class="card reveal">
+          <p class="c-kind">IEEE · First author</p>
+          <h4>Recognition of Emotional Influence of a Character: Experimental Design and Preliminary Results</h4>
+          <p>2020 IEEE Conference on Virtual Reality and 3D User Interfaces Workshops (VRW), 2020.</p>
+        </div>
+        <div class="card reveal">
+          <p class="c-kind">Elsevier · First author</p>
+          <h4>Parametric Facial Animation for Affective Interaction: Workflow for Avatar Retargeting</h4>
+          <p>Electronic Notes in Theoretical Computer Science, vol. 343, pp. 73–88, Elsevier, 2019.</p>
+        </div>
+        <div class="card reveal">
+          <p class="c-kind">Teaching · Udemy</p>
+          <h4>20+ hour Blender course — full 3D asset pipeline</h4>
+          <p>10,000+ students across 60+ countries, 4.5+/5 average rating. Modeling, UVs, geometry nodes, rigging, shaders, and GPU rendering.</p>
+        </div>
+        <div class="card reveal">
+          <p class="c-kind">International · Guest faculty</p>
+          <h4>Visiting instructor &amp; consultant</h4>
+          <p>Universidad Continental (Peru, 2024) and Universidad Nacional de Colombia (2019) — computer science, 3D scanning, and physically-based rendering.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CONTACT ===================== -->
+  <section id="contact">
+    <div class="wrap c-inner">
+      <div class="reveal">
+        <p class="kicker" style="justify-content:center">Let's build something</p>
+        <h2>Open to <span class="grad-text">graphics &amp; rendering</span> roles.</h2>
+        <p>Rendering engines, avatar systems, AI 3D pipelines, technical art — if it's real-time and hard, I'm interested. Let's talk.</p>
+        <div class="c-links">
+          <a href="mailto:j.sevamo@gmail.com" class="btn btn-primary">✉ j.sevamo@gmail.com</a>
+          <a href="https://linkedin.com/in/jsevamo" target="_blank" rel="noopener" class="btn btn-ghost">in/jsevamo</a>
+          <a href="tel:+12673063909" class="btn btn-ghost">(267) 306-3909</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap" style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;width:100%">
+      <span>© <span id="year">2026</span> Juan Sebastian Vargas Molano</span>
+      <span class="mono">Los Angeles, CA · built in WebGL &amp; Three.js</span>
+    </div>
+  </footer>
+
+  <!-- Three.js (r128 UMD, vendored locally — no CDN dependency, works offline & from file://) -->
+  <script src="js/three.min.js"></script>
+  <script src="js/scene.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

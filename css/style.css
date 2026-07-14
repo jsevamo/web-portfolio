@@ -597,6 +597,38 @@ section .section-head .kicker { counter-increment: sec; }
 .project .p-stack { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; }
 .project .p-stack .chip { font-size: 10.5px; padding: 5px 10px; }
 
+/* in-card media showcase */
+.p-media-label {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 28px 0 14px;
+}
+.p-media {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+@media (max-width: 720px){ .p-media { grid-template-columns: 1fr; } }
+.media-item { margin: 0; }
+.media-item video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--line-2);
+  background: #000;
+}
+.media-item figcaption {
+  margin-top: 10px;
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+.media-item figcaption strong { color: var(--text); font-weight: 600; }
+
 /* expand button */
 .p-expand {
   margin-top: 26px;

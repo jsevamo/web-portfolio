@@ -191,6 +191,52 @@
         <article class="project reveal">
           <div class="p-top">
             <span class="p-index">01</span>
+            <span class="p-tag">Latest · Web platform</span>
+          </div>
+          <h3>Lens, the internal 3D tooling platform</h3>
+          <p class="p-where">Full-stack architecture &amp; 3D</p>
+          <p class="p-body">
+            Lens is the platform my team uses to see and drive the avatar pipeline. It started as a
+            <strong>real-time job monitoring dashboard</strong> that follows every avatar through the
+            pipeline step by step, showing each stage move from queued to running to done as it happens,
+            and grew into a multi-workspace app that hosts several internal
+            tools behind one login. It embeds the same C++ avatar runtime as in-browser 3D viewers, so an
+            engineer can watch a job run and inspect the rigged avatar it produced without ever leaving
+            the page. This is my most recent work.
+          </p>
+
+          <p class="p-media-label">Watch it run</p>
+          <div class="p-media">
+            <figure class="media-item">
+              <video controls preload="none" playsinline poster="assets/avatar-viewer-poster.jpg">
+                <source src="assets/avatar-viewer.mp4" type="video/mp4" />
+                Your browser can't play embedded video. <a href="assets/avatar-viewer.mp4">Download it</a> instead.
+              </video>
+              <figcaption><strong>End to end generation.</strong> An avatar generated from scratch inside Lens, tracked through the pipeline and loaded straight into the viewer.</figcaption>
+            </figure>
+            <figure class="media-item">
+              <video controls preload="none" playsinline poster="assets/naf-viewer-poster.jpg">
+                <source src="assets/naf-viewer.mp4" type="video/mp4" />
+                Your browser can't play embedded video. <a href="assets/naf-viewer.mp4">Download it</a> instead.
+              </video>
+              <figcaption><strong>Spawn and dress.</strong> The in-browser runtime viewer spawning an avatar, then putting clothing on it live, with skeleton and wireframe debug views.</figcaption>
+            </figure>
+          </div>
+
+          <div class="p-stack">
+            <span class="chip">React 19</span><span class="chip">TypeScript</span><span class="chip">Convex</span>
+            <span class="chip">WorkOS</span><span class="chip">Three.js / R3F</span><span class="chip">WebAssembly</span>
+            <span class="chip">Tailwind</span><span class="chip">Vite</span>
+          </div>
+          <button class="p-expand" data-modal="modal-lens">
+            <span>See how it works under the hood</span>
+            <span class="px-arrow">→</span>
+          </button>
+        </article>
+
+        <article class="project reveal">
+          <div class="p-top">
+            <span class="p-index">02</span>
             <span class="p-tag">AI · Geometry Processing</span>
           </div>
           <h3>Meshmellow, an AI auto-retopology system</h3>
@@ -209,7 +255,7 @@
 
         <article class="project reveal">
           <div class="p-top">
-            <span class="p-index">02</span>
+            <span class="p-index">03</span>
             <span class="p-tag">Runtime · Cross-platform</span>
           </div>
           <h3>Cross-platform C++ avatar runtime</h3>
@@ -233,7 +279,7 @@
 
         <article class="project reveal">
           <div class="p-top">
-            <span class="p-index">03</span>
+            <span class="p-index">04</span>
             <span class="p-tag">Distributed · AIGC</span>
           </div>
           <h3>Distributed avatar-generation pipeline</h3>
@@ -263,7 +309,7 @@
 
         <article class="project reveal">
           <div class="p-top">
-            <span class="p-index">04</span>
+            <span class="p-index">05</span>
             <span class="p-tag">Rendering · Medical</span>
           </div>
           <h3>Sub-micron dental rendering kernel</h3>
@@ -289,7 +335,7 @@
 
         <article class="project reveal">
           <div class="p-top">
-            <span class="p-index">05</span>
+            <span class="p-index">06</span>
             <span class="p-tag">Teaching · Full 3D pipeline</span>
           </div>
           <h3>The Blender course</h3>
@@ -315,7 +361,7 @@
 
         <article class="project reveal">
           <div class="p-top">
-            <span class="p-index">06</span>
+            <span class="p-index">07</span>
             <span class="p-tag">Company · AR / VR / 3D</span>
           </div>
           <h3>My own company</h3>
@@ -576,11 +622,11 @@
             <span class="layer-sub">SWIG-generated bindings · Emscripten / WASM build for the web</span>
           </div>
           <div class="layer l-core">
-            <span class="layer-name">Core (GnCore)</span>
+            <span class="layer-name">Core</span>
             <span class="layer-sub">composition &amp; slots · entity system · mesh runtime · materials</span>
           </div>
           <div class="layer l-gfx">
-            <span class="layer-name">Graphics (GnGraphics)</span>
+            <span class="layer-name">Graphics</span>
             <span class="layer-sub">Vulkan / MoltenVK · Metal · OpenGL ES / WebGL · Slang shaders</span>
           </div>
           <div class="layer l-ser">
@@ -723,6 +769,90 @@
           <span class="chip">Python</span><span class="chip">Kafka</span><span class="chip">Kubernetes / EKS</span>
           <span class="chip">AWS S3</span><span class="chip">Blender (bpy)</span><span class="chip">USD</span>
           <span class="chip">ML inference</span><span class="chip">Distributed systems</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== MODAL: LENS ===================== -->
+  <div class="modal-root" id="modal-lens" aria-hidden="true">
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-lens-title">
+      <button class="modal-close" data-close aria-label="Close">×</button>
+      <div class="modal-inner">
+        <p class="modal-kicker">Genies · under the hood</p>
+        <h3 id="modal-lens-title">Lens, the internal 3D tooling platform</h3>
+        <p class="modal-lead">
+          One platform, frontend and backend, that hosts many internal tools behind a single login, with
+          real-time data from the avatar pipeline and rigged 3D avatars rendered right in the browser.
+        </p>
+
+        <h4>The problem it solves</h4>
+        <p class="modal-p">
+          The avatar pipeline runs across a constellation of distributed services (the one in the card
+          next door). Engineers and artists needed one place to watch jobs run, inspect what came out,
+          and use internal tooling, instead of tailing logs and poking raw APIs. Lens is that place.
+        </p>
+
+        <h4>How it is put together</h4>
+        <div class="layer-diagram">
+          <div class="layer l-core">
+            <span class="layer-name">Browser · one React 19 app</span>
+            <span class="layer-sub">modular workspaces (job monitor, avatar autogen, avatar viewer, wearables) under one shell</span>
+          </div>
+          <div class="layer">
+            <span class="layer-name">Auth</span>
+            <span class="layer-sub">WorkOS AuthKit · OAuth login · JWT rides with every backend call</span>
+          </div>
+          <div class="layer">
+            <span class="layer-name">Realtime data</span>
+            <span class="layer-sub">Convex queries / mutations / actions · live job progress over subscriptions, no polling</span>
+          </div>
+          <div class="layer l-gfx">
+            <span class="layer-name">In-browser 3D</span>
+            <span class="layer-sub">Three.js · React Three Fiber · the C++ avatar runtime compiled to WebAssembly</span>
+          </div>
+          <div class="layer">
+            <span class="layer-name">Integrations, behind actions</span>
+            <span class="layer-sub">S3 (presigned) · CMS · storage · pipeline jobs — no secrets in the client</span>
+          </div>
+        </div>
+
+        <ul class="modal-list">
+          <li><strong>Workspaces, not separate apps.</strong> One authenticated shell provides auth,
+            layout, data, and the 3D viewers; each internal tool is a self-contained "workspace" with
+            its own URL namespace, navbar, and pages. Adding a tool means adding a workspace, not
+            standing up a new app.</li>
+          <li><strong>Real-time by default.</strong> Convex pushes job progress over live subscriptions,
+            so the dashboard tracks the pipeline as it runs, each step moving from queued to running to
+            done in front of you, with no refreshing or polling.</li>
+          <li><strong>The runtime, in the browser.</strong> The same C++ avatar runtime from the card
+            next door is compiled to WebAssembly and embedded as a viewer, so you can inspect the rigged
+            avatar a job produced without leaving the page. Private assets get presigned first.</li>
+          <li><strong>Secrets stay server-side.</strong> Every privileged call (storage, CMS, job data)
+            sits behind a backend action, so the browser never holds a credential.</li>
+        </ul>
+
+        <h4>Why it matters</h4>
+        <p class="modal-p">
+          Lens is where my other two Genies systems become visible and usable: it monitors the
+          distributed pipeline and it renders the avatars the runtime builds. It turns a backend that
+          used to live in logs and dashboards into something the whole team can actually see and drive.
+        </p>
+
+        <h4>My part</h4>
+        <p class="modal-p">
+          I built Lens end to end: the frontend architecture and the workspace platform that lets new
+          internal tools slot in cleanly, the backend that serves and authenticates it, and the
+          real-time job monitoring on top. I also own the connective layer that ties Lens into the rest
+          of Genies' stack, wiring it up to the pipeline, storage, and CMS services other teams built,
+          plus the in-browser integration of the C++ avatar runtime as a 3D viewer.
+        </p>
+
+        <div class="p-stack">
+          <span class="chip">React 19</span><span class="chip">TypeScript</span><span class="chip">Vite</span>
+          <span class="chip">Convex</span><span class="chip">WorkOS</span><span class="chip">Three.js / R3F</span>
+          <span class="chip">WebAssembly</span><span class="chip">Tailwind</span><span class="chip">Docker</span>
         </div>
       </div>
     </div>

@@ -70,6 +70,35 @@
     stats.forEach(countUp);
   }
 
+  // --- Under-the-hood modals ---
+  var openModal = null;
+  function open(id) {
+    var m = document.getElementById(id);
+    if (!m) return;
+    m.classList.add("open");
+    m.setAttribute("aria-hidden", "false");
+    document.body.classList.add("modal-open");
+    openModal = m;
+    var closeBtn = m.querySelector(".modal-close");
+    if (closeBtn) closeBtn.focus();
+  }
+  function close() {
+    if (!openModal) return;
+    openModal.classList.remove("open");
+    openModal.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("modal-open");
+    openModal = null;
+  }
+  document.querySelectorAll(".p-expand[data-modal]").forEach(function (btn) {
+    btn.addEventListener("click", function () { open(btn.getAttribute("data-modal")); });
+  });
+  document.querySelectorAll("[data-close]").forEach(function (el) {
+    el.addEventListener("click", close);
+  });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && openModal) close();
+  });
+
   // --- Year in footer ---
   var yr = document.getElementById("year");
   if (yr) yr.textContent = "2026";

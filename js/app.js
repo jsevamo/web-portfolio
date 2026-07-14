@@ -23,8 +23,19 @@
     });
   }
 
-  // --- Reveal on scroll ---
+  // --- Reveal on scroll (staggered among siblings) ---
   var revealEls = document.querySelectorAll(".reveal");
+  revealEls.forEach(function (el) {
+    var parent = el.parentElement;
+    if (!parent) return;
+    var peers = Array.prototype.filter.call(parent.children, function (c) {
+      return c.classList && c.classList.contains("reveal");
+    });
+    if (peers.length > 1) {
+      var idx = peers.indexOf(el);
+      el.style.setProperty("--stagger", Math.min(idx * 90, 360) + "ms");
+    }
+  });
   if ("IntersectionObserver" in window) {
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (en) {
@@ -37,6 +48,22 @@
     revealEls.forEach(function (el) { io.observe(el); });
   } else {
     revealEls.forEach(function (el) { el.classList.add("in"); });
+  }
+
+  // --- Scroll progress hairline ---
+  var progressBar = document.getElementById("progress-bar");
+  if (progressBar) {
+    var ticking = false;
+    function updateProgress() {
+      var max = document.documentElement.scrollHeight - window.innerHeight;
+      var p = max > 0 ? window.scrollY / max : 0;
+      progressBar.style.transform = "scaleX(" + Math.min(Math.max(p, 0), 1) + ")";
+      ticking = false;
+    }
+    window.addEventListener("scroll", function () {
+      if (!ticking) { requestAnimationFrame(updateProgress); ticking = true; }
+    }, { passive: true });
+    updateProgress();
   }
 
   // --- Stat count-up ---

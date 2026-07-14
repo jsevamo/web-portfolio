@@ -131,9 +131,9 @@
 
   var uniforms = {
     uTime: { value: 0 },
-    uDisplace: { value: reduceMotion ? 0.28 : 0.42 },
-    uColorA: { value: new THREE.Color(0x2b1a6b) }, // deep violet
-    uColorB: { value: new THREE.Color(0x4de1c1) }, // teal
+    uDisplace: { value: reduceMotion ? 0.26 : 0.38 },
+    uColorA: { value: new THREE.Color(0x241557) }, // deep violet
+    uColorB: { value: new THREE.Color(0x43d6b6) }, // teal
   };
 
   var geo = new THREE.IcosahedronGeometry(1.6, 64);
@@ -153,7 +153,7 @@
   // Wireframe shell for extra depth.
   var wire = new THREE.Mesh(
     new THREE.IcosahedronGeometry(1.95, 3),
-    new THREE.MeshBasicMaterial({ color: 0x6f7bff, wireframe: true, transparent: true, opacity: 0.12 })
+    new THREE.MeshBasicMaterial({ color: 0x6f7bff, wireframe: true, transparent: true, opacity: 0.08 })
   );
   group.add(wire);
 
@@ -174,9 +174,9 @@
   pGeo.setAttribute("position", new THREE.BufferAttribute(positions, 3));
   var pMat = new THREE.PointsMaterial({
     color: 0x8ea2ff,
-    size: 0.03,
+    size: 0.026,
     transparent: true,
-    opacity: 0.7,
+    opacity: 0.55,
     depthWrite: false,
     blending: THREE.AdditiveBlending,
   });
@@ -236,7 +236,7 @@
     curX += (targetX - curX) * 0.05;
     curY += (targetY - curY) * 0.05;
 
-    var spin = reduceMotion ? 0.03 : 0.12;
+    var spin = reduceMotion ? 0.03 : 0.09;
     mesh.rotation.y += dt * spin;
     mesh.rotation.x = curY * 0.35;
     mesh.rotation.z = curX * 0.15;

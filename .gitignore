@@ -1,0 +1,8 @@
+# The full-resolution original reel is 326 MB — too large for git / web.
+# The site uses the compressed demo-reel.mp4 (~33 MB) instead.
+Sebastian's Demo Reel.mp4
+
+# scratch / OS files
+_to_delete/
+*.log
+.DS_Store

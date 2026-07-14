@@ -375,6 +375,40 @@ section { position: relative; padding: 110px 0; }
 .pillar h4 { margin: 0 0 8px; font-size: 18px; font-weight: 700; letter-spacing: -0.01em; }
 .pillar p { margin: 0; color: var(--muted); font-size: 14.5px; }
 
+/* ============ Demo reel ============ */
+.reel-frame {
+  position: relative;
+  border: 1px solid var(--line-2);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: #000;
+  box-shadow: 0 30px 70px rgba(0,0,0,0.5);
+}
+.reel-frame::after {
+  content: "";
+  position: absolute; inset: 0;
+  border-radius: var(--radius);
+  padding: 1px;
+  background: var(--grad);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor; mask-composite: exclude;
+  opacity: .35; pointer-events: none;
+}
+.reel-frame video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  background: #000;
+}
+.reel-caption {
+  margin: 20px auto 0;
+  max-width: 820px;
+  color: var(--muted);
+  font-size: 14.5px;
+  text-align: center;
+}
+
 /* ============ Work groups (company dividers) ============ */
 .work-group {
   display: flex;

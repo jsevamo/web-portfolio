@@ -121,22 +121,22 @@
     "varying vec3 vNormal;",
     "varying vec3 vView;",
     "void main(){",
-    "  float fres = pow(1.0 - max(dot(vNormal, vView), 0.0), 2.4);",
-    "  float mixv = smoothstep(-0.6, 0.9, vNoise);",
+    "  float fres = pow(1.0 - max(dot(vNormal, vView), 0.0), 2.6);",
+    "  float mixv = smoothstep(-0.55, 1.0, vNoise);",
     "  vec3 base = mix(uColorA, uColorB, mixv);",
-    "  vec3 col = base + fres * 0.9;",
+    "  vec3 col = base + fres * vec3(0.55, 0.6, 0.5);",
     "  gl_FragColor = vec4(col, 1.0);",
     "}",
   ].join("\n");
 
   var uniforms = {
     uTime: { value: 0 },
-    uDisplace: { value: reduceMotion ? 0.26 : 0.38 },
-    uColorA: { value: new THREE.Color(0x241557) }, // deep violet
-    uColorB: { value: new THREE.Color(0x43d6b6) }, // teal
+    uDisplace: { value: reduceMotion ? 0.1 : 0.16 },
+    uColorA: { value: new THREE.Color(0x14180f) }, // near-black moss
+    uColorB: { value: new THREE.Color(0xd9ff4a) }, // electric lime
   };
 
-  var geo = new THREE.IcosahedronGeometry(1.6, 64);
+  var geo = new THREE.TorusKnotGeometry(1.3, 0.42, 300, 48);
   var mat = new THREE.ShaderMaterial({
     uniforms: uniforms,
     vertexShader: vertexShader,
@@ -150,10 +150,10 @@
   var mesh = new THREE.Mesh(geo, mat);
   group.add(mesh);
 
-  // Wireframe shell for extra depth.
+  // Faint wireframe shell for depth.
   var wire = new THREE.Mesh(
-    new THREE.IcosahedronGeometry(1.95, 3),
-    new THREE.MeshBasicMaterial({ color: 0x6f7bff, wireframe: true, transparent: true, opacity: 0.08 })
+    new THREE.IcosahedronGeometry(2.4, 2),
+    new THREE.MeshBasicMaterial({ color: 0xffffff, wireframe: true, transparent: true, opacity: 0.045 })
   );
   group.add(wire);
 
@@ -173,10 +173,10 @@
   var pGeo = new THREE.BufferGeometry();
   pGeo.setAttribute("position", new THREE.BufferAttribute(positions, 3));
   var pMat = new THREE.PointsMaterial({
-    color: 0x8ea2ff,
-    size: 0.026,
+    color: 0xffffff,
+    size: 0.024,
     transparent: true,
-    opacity: 0.55,
+    opacity: 0.4,
     depthWrite: false,
     blending: THREE.AdditiveBlending,
   });
@@ -208,8 +208,8 @@
     // scale it down, and let it sit softly behind the text.
     var landscape = camera.aspect >= 1;
     group.position.x = landscape ? 2.35 : 0;
-    group.position.y = landscape ? 0.1 : 1.4;
-    var s = landscape ? 1 : 0.72;
+    group.position.y = landscape ? 0.1 : 2.1;
+    var s = landscape ? 1 : 0.52;
     group.scale.set(s, s, s);
   }
   window.addEventListener("resize", resize);

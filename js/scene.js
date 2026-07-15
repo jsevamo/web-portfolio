@@ -124,7 +124,7 @@
     "  float fres = pow(1.0 - max(dot(vNormal, vView), 0.0), 2.6);",
     "  float mixv = smoothstep(-0.55, 1.0, vNoise);",
     "  vec3 base = mix(uColorA, uColorB, mixv);",
-    "  vec3 col = base + fres * vec3(0.55, 0.6, 0.5);",
+    "  vec3 col = base + fres * vec3(0.4, 0.62, 0.95);",
     "  gl_FragColor = vec4(col, 1.0);",
     "}",
   ].join("\n");
@@ -132,8 +132,8 @@
   var uniforms = {
     uTime: { value: 0 },
     uDisplace: { value: reduceMotion ? 0.1 : 0.16 },
-    uColorA: { value: new THREE.Color(0x14180f) }, // near-black moss
-    uColorB: { value: new THREE.Color(0xd9ff4a) }, // electric lime
+    uColorA: { value: new THREE.Color(0x0b1220) }, // near-black navy
+    uColorB: { value: new THREE.Color(0x4d9dff) }, // electric blue
   };
 
   var geo = new THREE.TorusKnotGeometry(1.3, 0.42, 300, 48);

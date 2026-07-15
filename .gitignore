@@ -6,3 +6,7 @@ Sebastian's Demo Reel.mp4
 _to_delete/
 *.log
 .DS_Store
+
+# private plaintext master of the site (edit this, never publish it) + staticrypt salt
+index.source.html
+.staticrypt.json
